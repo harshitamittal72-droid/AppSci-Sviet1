@@ -1,0 +1,19 @@
+{% include 'navbar.html' %}{% block content %} {% load static %}
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{{ blog.title }}</title>
+  </head>
+  <body>
+    <a href="{% url 'blog_list' %}">Back to all blogs</a>
+    <h1>{{ blog.title }}</h1>
+    <div class="blog-image-container">
+      <img src="{{ blog.image.url }}" alt="{{ blog.title }}" width="500px" />
+    </div>
+    <p>{{ blog.content }}</p>
+    <p><i>Published on {{ blog.created_at }}</i></p>
+  </body>
+</html>
+{% endblock content %}

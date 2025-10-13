@@ -1,0 +1,26 @@
+{% include 'navbar.html' %} {% block content %} {% load static %}
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>All Blogs</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}" />
+  </head>
+  <body>
+    <h1>All Blogs</h1>
+    {% for blog in blogs %}
+    <div class="blog-preview">
+      <img src="{{ blog.image.url }}" alt="{{ blog.title }}" />
+      <div>
+        <h2>
+          <a href="{% url 'blog_detail' blog.id %}"
+            >{{ blog.title|truncatewords:8 }}
+          </a>
+        </h2>
+        <p>{{ blog.content|truncatewords:25 }}</p>
+      </div>
+    </div>
+    {% endfor %}
+  </body>
+</html>
+{% endblock content %}
