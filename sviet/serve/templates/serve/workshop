@@ -1,4 +1,4 @@
- {% load static %}
+ {% include 'navbar.html' %}{% block content %} {% load static %}
  <div class="container">
         <header>
             <h1>Engineering Workshop Classes</h1>
