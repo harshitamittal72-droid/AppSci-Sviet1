@@ -203,26 +203,6 @@ body {
             }
         }
 
-        /* Demo button - remove this in your main page */
-        .demo-trigger {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            padding: 15px 30px;
-            background: #667eea;
-            color: white;
-            border: none;
-            border-radius: 30px;
-            font-size: 1rem;
-            font-weight: bold;
-            cursor: pointer;
-            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
-            transition: transform 0.2s;
-        }
-
-        .demo-trigger:hover {
-            transform: scale(1.05);
-        }
 
 /* ===== NAVBAR ===== */
 nav {
