@@ -8,3 +8,4 @@ def blog_list(request):
 def blog_detail(request,blog_id):
     blog = get_object_or_404(Blog, id=blog_id)
     return render(request, 'serve/blog_detail.html', {'blog':blog})
+

@@ -1,0 +1,444 @@
+{% block content %} {% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Swami Vivekanand Institute - Department of Applied Sciences: academics, events, faculty, gallery and latest news."
+    />
+    <title>Applied Sciences Department</title>
+
+    <!-- Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400,700&family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+
+    <!-- Link to external CSS -->
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}" />
+  </head>
+
+  <body>
+    <div class="particles" id="particles"></div>
+
+    <!-- NAVBAR -->
+    <nav>
+      <div class="logo" aria-label="Applied Sciences Department Home">
+        <i class="fas fa-flask" aria-hidden="true"></i>
+        Applied Sciences Department
+      </div>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#Academics">Academics</a></li>
+        <li><a href="#achievements">Achievements</a></li>
+        <li><a href="#countdown-section">Events</a></li>
+        <li><a href="#gallery">Gallery</a></li>
+        <li><a href="Infrastructure.html">Infra</a></li>
+        <li><a href="faculty.html">Faculty</a></li>
+        <li><a href="Aboutus.html">About Us</a></li>
+      </ul>
+    </nav>
+
+    <!-- UPDATES BAR -->
+    <div class="updates-bar" role="region" aria-label="Latest updates">
+      <div class="updates-text" aria-live="polite">
+        📢 Latest Updates: Datesheet for MST 1 | Garba Night on 27th September |
+        CR notice !
+      </div>
+    </div>
+
+    <!-- HERO CAROUSEL -->
+    <div class="carousel" id="home" aria-roledescription="carousel">
+      <img
+        src="images/hero1.png"
+        class="active"
+        alt="Campus Image 1"
+        loading="lazy"
+      />
+      <img src="images/hero2.jpg" alt="Campus Image 2" loading="lazy" />
+      <img src="images/hero3.jpg" alt="Campus Image 3" loading="lazy" />
+
+      <div class="carousel-text">
+        <h1>Welcome to the Department of Applied Sciences</h1>
+        <p>Innovation | Excellence | Knowledge</p>
+      </div>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div class="container">
+      <!-- Left Card -->
+      <div class="card" aria-label="Announcements">
+        <div class="card-header">📢 Latest Updates & Announcements</div>
+        <div class="scroll-box">
+          <div class="scroll-content">
+            <div class="scroll-item">
+              <h3>🏢 MST-1</h3>
+              <p><strong>Confirmed datesheet and syllabus for MST-1</strong></p>
+              <p>
+                This is information For B.Tech CSE,Diploma that your MST's will
+                start from 29th Of September.
+              </p>
+              <a href="#">Know More »</a>
+            </div>
+            <div class="scroll-item">
+              <h3>🎓 CR selection Notice</h3>
+              <p><strong>Updated CR list</strong></p>
+              <p>Check out your new CR's.</p>
+              <a href="#">Know More »</a>
+            </div>
+            <div class="scroll-item">
+              <h3>📖Winners Of Dancing and Singing Activity</h3>
+              <p><strong>15-09-25 to 19-09-25</strong></p>
+              <p>Look for your names!!</p>
+              <a href="#">Check Now »</a>
+            </div>
+            <div class="scroll-item">
+              <h3>📖 Social Media Team selection</h3>
+              <p>
+                <strong
+                  >Notice regarding social media coverage team of our
+                  department</strong
+                >
+              </p>
+              <p>Look for your names!!</p>
+              <a href="#">Check Now »</a>
+            </div>
+            <div class="scroll-item">
+              <h3>📖 Teachnical Committee selection</h3>
+              <p><strong>Notice regarding technical committee</strong></p>
+              <p>Look for your names!!</p>
+              <a href="#">Check Now »</a>
+            </div>
+
+            <!-- Duplicate block to make the scroll loop smoothly -->
+            <div class="scroll-item">
+              <h3>📖 Admissions Open</h3>
+              <p><strong>2025 Session</strong></p>
+              <p>
+                Admissions for B.Tech, MBA, and MCA programs are now open. Apply
+                early to secure your seat.
+              </p>
+              <a href="#">Apply Now »</a>
+            </div>
+          </div>
+        </div>
+        <button class="explore-btn">Explore More</button>
+      </div>
+
+      <!-- Right Card -->
+      <div class="card" aria-label="Overview">
+        <div class="card-header">Latest Events</div>
+        <p>
+          Stay Updated on Admissions, Campus Events, Career Openings, and
+          Exciting Placement Drives to Shape Your Future!
+        </p>
+        <div class="stats" role="list">
+          <div class="stat-box" role="listitem">
+            3,000+ <br />
+            Offer Letters
+          </div>
+          <div class="stat-box" role="listitem">
+            100+ <br />
+            Programs
+          </div>
+          <div class="stat-box" role="listitem">
+            600+ <br />
+            Faculty
+          </div>
+          <div class="stat-box" role="listitem">
+            50,000+ <br />
+            Alumni
+          </div>
+        </div>
+        <button class="explore-btn">Explore More</button>
+      </div>
+    </div>
+
+    <!-- Collage -->
+    <section id="Academics">
+      <h2>Academics</h2>
+      <div class="grid-collage" id="gallery">
+        <a href="Aboutus.html" class="item3">
+          <img src="images/Aboutus.jpg" alt="About Us" loading="lazy" />
+          <span> About Us </span>
+        </a>
+
+        <a href="branch.html" class="item1">
+          <img src="images/branchdisplay.jpg" alt="Branches" loading="lazy" />
+          <span> Branches </span>
+        </a>
+        <a href="committe.html" class="item2">
+          <img
+            src="images/committedisplay.png"
+            alt="Committees"
+            loading="lazy"
+          />
+          <span> Committees </span>
+        </a>
+
+        <a href="page4.html" class="item4">
+          <img src="images/Workshop.jpg" alt="Workshop" loading="lazy" />
+          <span>Workshop</span>
+        </a>
+        <a href="Infrastructure.html" class="item5">
+          <img src="images/classes.jpg" alt="Our Classrooms" loading="lazy" />
+          <span>Inside Our Department</span>
+        </a>
+        <a href="faculty.html" class="item6">
+          <img src="images/faculty.jpg" alt="Faculty" loading="lazy" />
+          <span>Faculty</span>
+        </a>
+        <a href="blogs.html" class="item7">
+          <img src="images/blogs.jpg" alt="Blogs" loading="lazy" />
+          <span>Blogs</span>
+        </a>
+      </div>
+    </section>
+
+    <!-- ACHIEVEMENTS -->
+    <section id="achievements">
+      <h2>Departmental Achievements</h2>
+
+      <div class="achievements-grid">
+        <div class="card1">
+          <img src="images/achieve1.jpg" alt="Tug of War" loading="lazy" />
+          <h3>Tug Of War</h3>
+          <p>Won first prize in inter-house competition</p>
+        </div>
+
+        <div class="card1">
+          <img src="images/achieve2.jpg" alt="Research" loading="lazy" />
+          <h3>Research Published</h3>
+          <p>
+            Published Research paper in Taylor and Francis Group (Scopus
+            Indexed)
+          </p>
+        </div>
+
+        <div class="card1">
+          <img src="images/achieve3.png" alt="Red Romans" loading="lazy" />
+          <h3>Red Romans</h3>
+          <p>Winners Of Spontania 2K24</p>
+        </div>
+
+        <div class="card1">
+          <img src="images/achieve4.jpg" alt="Spontania 2k25" loading="lazy" />
+          <h3>Spontania 2k25</h3>
+          <p>Runner Up in the manly meal challenge</p>
+        </div>
+
+        <div class="card1">
+          <img src="images/achieve5.jpg" alt="Research" loading="lazy" />
+          <h3>Research Published</h3>
+          <p>
+            Published Research paper in Taylor and Francis Group (Scopus
+            Indexed)
+          </p>
+        </div>
+
+        <!-- add 3 more .card1 blocks if you want a full 4x2 grid -->
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+      <div class="footer-top">
+        <div class="footer-logo">Applied Science Department</div>
+        <div class="footer-contact">
+          <a href="#">PLAN A VISIT</a>
+          <a href="#">CONTACT</a>
+          <span>(610) 330-5000</span>
+        </div>
+        <div class="footer-links">
+          <a href="#">DIRECTORY</a>
+          <a href="#">OFFICES & RESOURCES</a>
+          <a href="#">COLLEGE STORE</a>
+          <a href="#">EMPLOYMENT</a>
+          <a href="#">VIRTUAL TOUR</a>
+        </div>
+        <div class="footer-social">
+          <a
+            href="https://www.facebook.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Facebook"
+            ><i class="fab fa-facebook-f"></i
+          ></a>
+          <a
+            href="https://twitter.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Twitter"
+            ><i class="fab fa-twitter"></i
+          ></a>
+          <a
+            href="https://www.instagram.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Instagram"
+            ><i class="fab fa-instagram"></i
+          ></a>
+          <a
+            href="https://www.linkedin.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="LinkedIn"
+            ><i class="fab fa-linkedin-in"></i
+          ></a>
+          <a
+            href="https://www.youtube.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="YouTube"
+            ><i class="fab fa-youtube"></i
+          ></a>
+        </div>
+        <img src="images/classes.jpg" />
+      </div>
+      <div class="footer-bottom">
+        &copy; <span id="year"></span> Swami Vivekanand Institute of Engineering
+        & Technology
+      </div>
+    </footer>
+
+    <!-- ===== SOCIAL MEDIA SECTION ===== -->
+    <section class="social-media" aria-label="Social media">
+      <h2>Social Media</h2>
+      <p>
+        Hi! Connect with us on our social medias for latest news and updates.
+        More coming soon...
+      </p>
+      <div class="social-circles" role="navigation" aria-label="Social links">
+        <a
+          href="https://www.youtube.com"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="circle youtube"
+          aria-label="YouTube"
+          ><i class="fab fa-youtube" aria-hidden="true"></i
+        ></a>
+        <a
+          href="https://www.instagram.com"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="circle instagram"
+          aria-label="Instagram"
+          ><i class="fab fa-instagram" aria-hidden="true"></i
+        ></a>
+        <a
+          href="https://twitter.com"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="circle twitter"
+          aria-label="Twitter"
+          ><i class="fab fa-twitter" aria-hidden="true"></i
+        ></a>
+        <a
+          href="https://www.linkedin.com"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="circle linkedin"
+          aria-label="LinkedIn"
+          ><i class="fab fa-linkedin-in" aria-hidden="true"></i
+        ></a>
+      </div>
+    </section>
+
+    <!-- FOOTER 2 -->
+    <footer
+      class="footer2"
+      id="contact"
+      style="
+        background: var(--color-bg);
+        color: var(--color-metallic);
+        padding: 36px 20px;
+      "
+    >
+      <div
+        style="
+          max-width: 1100px;
+          margin: 0 auto;
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+          gap: 18px;
+        "
+      >
+        <div>
+          <h3>Contact Us</h3>
+          <p>
+            Email:
+            <a
+              href="mailto:info@appliedsci.edu"
+              style="color: var(--color-metallic)"
+              >info@appliedsci.edu</a
+            >
+          </p>
+          <p>Phone: +91 98765 43210</p>
+          <p>
+            Address: Swami Vivekanand Institute of Engineering & Technology,
+            Ramnagar, India ( C - 10362)
+          </p>
+        </div>
+
+        <div>
+          <h3>Quick Links</h3>
+          <p><a href="#home" style="color: var(--color-metallic)">Home</a></p>
+          <p>
+            <a href="#Academics" style="color: var(--color-metallic)"
+              >Academics</a
+            >
+          </p>
+          <p>
+            <a href="#achievements" style="color: var(--color-metallic)"
+              >Achievements</a
+            >
+          </p>
+          <p>
+            <a href="#countdown-section" style="color: var(--color-metallic)"
+              >Events</a
+            >
+          </p>
+          <p>
+            <a href="#gallery" style="color: var(--color-metallic)">Gallery</a>
+          </p>
+          <p>
+            <a href="faculty.html" style="color: var(--color-metallic)"
+              >Faculty</a
+            >
+          </p>
+        </div>
+
+        <div>
+          <h3>Resources</h3>
+          <p><a href="#" style="color: var(--color-metallic)">Library</a></p>
+          <p>
+            <a href="#" style="color: var(--color-metallic)">Research Labs</a>
+          </p>
+          <p>
+            <a href="#" style="color: var(--color-metallic)">Alumni Network</a>
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- FLOATING CONTACT BUTTON -->
+    <a
+      href="mailto:info@appliedsci.edu"
+      class="contact-btn"
+      aria-label="Contact us"
+      >✉️</a
+    >
+
+    <!-- Link JS -->
+    <script src="script.js"></script>
+  </body>
+</html>
+{% endblock content %}

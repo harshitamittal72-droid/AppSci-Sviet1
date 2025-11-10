@@ -24,7 +24,11 @@ from django.conf import settings
 urlpatterns = [
     path('admin/', admin.site.urls),
     path("",views.home,name="home"),
-    path('',include('serve.urls'))
+    path("/faculty", views.faculty,name="faculty"),
+    path("/branch",views.branch,name="branch"),
+    path("/infrastructure", views.infrastructure,name="infrastructure"),
+    
+    path('',include('serve.urls')),
 ]
 
 if settings.DEBUG:
