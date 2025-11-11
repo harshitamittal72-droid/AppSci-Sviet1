@@ -15,4 +15,4 @@ def workshop(request):
 def aboutus(request):
     return render(request,"aboutus.html")
 def classroom(request):
-    return render(request,"classroom.html")
+    return render(request,"classrooms.html")
