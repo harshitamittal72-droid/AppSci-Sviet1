@@ -1,4 +1,8 @@
-{% include 'navbar.html' %}{% block content %} 
+{% include 'navbar.html' %}{% block content %} {%load static}
+
+<head>
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
 
   <!-- Header -->
   <header>
@@ -70,3 +74,5 @@ Through this mission, we aspire to be a beacon of educational excellence, shapin
   <footer>
     <p>&copy; 2025 Applied Sciences | All Rights Reserved</p>
   </footer>
+
+  {% endblock content %} 

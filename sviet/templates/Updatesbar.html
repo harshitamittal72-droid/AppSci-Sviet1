@@ -1,4 +1,12 @@
- <!-- UPDATES BAR -->
+{% block content %} {% load static %}
+
+<head>
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+
+<!-- UPDATES BAR -->
   <div class="updates-bar" role="region" aria-label="Latest updates">
     <div class="updates-text" aria-live="polite">📢 Latest Updates: Datesheet for Moct Test 1 | Datesheet for MST 1 | Garba Night on 27th September | CR notice !</div>
   </div>
+  
+{% endblock content %} 

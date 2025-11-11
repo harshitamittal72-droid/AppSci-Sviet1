@@ -1,7 +1,9 @@
-{% load static %}
+{% block content %} {% load static %}
+
 <head>
   <link rel="stylesheet" href="{% static 'css/styles.css' %}" />
 </head>
+
 <!-- HERO CAROUSEL -->
   <div class="carousel" id="home" aria-roledescription="carousel">
    <img src="{% static 'images/hero1.png' %}" class="active" alt="Campus Image 1" loading="lazy">
@@ -14,3 +16,4 @@
       <p>Innovation | Excellence | Knowledge</p>
     </div>
   </div>
+{% endblock content %} 
