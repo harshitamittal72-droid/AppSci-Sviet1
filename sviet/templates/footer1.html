@@ -1,3 +1,7 @@
+  {% block content %} {% load static %}
+
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+  
   <!-- FOOTER -->
   <footer class="site-footer">
     <div class="footer-top">
@@ -25,3 +29,5 @@
     </div>
     <div class="footer-bottom">&copy; <span id="year"></span> Swami Vivekanand Institute of Engineering & Technology</div>
   </footer>
+
+  {% endblock content %} 

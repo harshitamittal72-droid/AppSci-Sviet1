@@ -1,5 +1,9 @@
 {% include 'navbar.html' %}{% block content %}{% load static %}
 
+<head>
+<link rel="stylesheet" href="{% static 'css/css1' %}">
+</head>
+
 <!-- BRANCHES -->
   <section id="branches">
     <h2>Our Branches</h2>
@@ -16,3 +20,4 @@
       <div class="card"><img src="images/branch9.png" alt="Diploma Computer Science"><h3>Diploma Computer Science</h3></div>
     </div>
   </section>
+{% endblock content %} 

@@ -1,4 +1,9 @@
-{% load static %}
+{% block content %} {% load static %}
+
+<head>
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+
 <!-- ACHIEVEMENTS -->
 <section id="achievements">
   <h2>Departmental Achievements</h2>
@@ -32,3 +37,4 @@
   </div>
 </section>
 
+{% endblock content %} 

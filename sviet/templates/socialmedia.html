@@ -1,3 +1,9 @@
+{% block content %}{% load static %} 
+
+<head>
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+
  <!-- ===== SOCIAL MEDIA SECTION ===== -->
   <section class="social-media" aria-label="Social media">
     <h2>Social Media</h2>
@@ -9,3 +15,4 @@
       <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer" class="circle linkedin" aria-label="LinkedIn"><i class="fab fa-linkedin-in" aria-hidden="true"></i></a>
     </div>
   </section>
+{% endblock content %}
