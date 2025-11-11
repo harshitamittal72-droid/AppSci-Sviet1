@@ -1,3 +1,7 @@
+  {% block content %} {% load static %}
+
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+  
   <!-- FOOTER 2 -->
   <footer class="footer2" id="contact" style="background:var(--color-bg); color:var(--color-metallic); padding:36px 20px;">
     <div style="max-width:1100px; margin:0 auto; display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:18px;">
@@ -26,3 +30,5 @@
       </div>
     </div> 
   </footer>
+
+  {% endblock content %} 

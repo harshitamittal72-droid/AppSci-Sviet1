@@ -72,7 +72,8 @@ document.addEventListener("DOMContentLoaded", () => {
         });
 
             window.addEventListener('load', function() {
-    setTimeout(openPopup, 1000);
+                console.log("Popup function is working!");
+    setTimeout(openPopup, 5000);
 });
       
         const blogs = [

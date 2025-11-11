@@ -1,4 +1,7 @@
-{% load static %}
+{% block content %} {% load static %}
+
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+
 <!-- Collage -->
 <section id="Academics">
   <h2>Academics</h2>
@@ -58,3 +61,5 @@
     </a>
   </div>
 </section>
+
+{% endblock content %} 

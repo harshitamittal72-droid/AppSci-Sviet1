@@ -1,4 +1,10 @@
-  <!-- MAIN CONTENT -->
+{% block content %} {% load static %}
+
+<head>
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+
+<!-- MAIN CONTENT -->
   <div class="container">
     <!-- Left Card -->
     <div class="card" aria-label="Announcements">
@@ -59,3 +65,5 @@
       <button class="explore-btn">Explore More</button>
     </div>
   </div>
+
+  {% endblock content %} 

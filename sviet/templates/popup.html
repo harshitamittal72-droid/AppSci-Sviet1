@@ -1,6 +1,9 @@
-{% load static %}
+{% load static %} {% block content %} {% load static %}
 
-<link rel="stylesheet" href="{% static 'css/style.css' %}" />
+<head>
+  <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+</head>
+
 <!-- Popup Structure -->
 <div class="popup-overlay" id="techArenaPopup">
   <div class="popup-container">
@@ -54,3 +57,5 @@
 </div>
 
 <script src="{% static 'js/script.js' %}"></script>
+
+{% endblock content %}
