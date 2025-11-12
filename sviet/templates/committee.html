@@ -1,39 +1,92 @@
-{% include 'navbar.html' %}{% block content %}{% load static %}
+{% block content %}{% load static %}
 
-<link rel="stylesheet" href="{% static 'css/style.css' %}">
+<head>
+<link rel="stylesheet" href="{% static 'css/clubs.css' %}">
+</head>
 
-<!-- Hamburger (mobile) -->
-    <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
-      <span></span>
-      <span></span>
-      <span></span>
+ <nav>
+    <div class="logo"><i class="fas fa-flask"></i><span>Applied Sciences Dept.</span></div>
+    <ul class="nav-links">
+       <li><a href="{% url 'home' %}"> Home </a></li>
+      <li><a href="#clubs">Clubs</a></li>
+      <li><a href="#technical">Committees</a></li>
+    </ul>
+    <button class="hamburger" id="hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
     </button>
-
-    <!-- Mobile menu (same links) -->
-    <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
-      <a href="#top" data-target="top">Home</a>
-      <a href="#technical" data-target="technical">Technical</a>
-      <a href="#infrastructure" data-target="infrastructure">Infra / Cleanliness</a>
-      <a href="#examination" data-target="examination">Examination</a>
-      <a href="#extracurricular" data-target="extracurricular">Extra Co-curricular</a>
-      <a href="#timetable" data-target="timetable">Time Table</a>
-      <a href="#discipline" data-target="discipline">Discipline & Student Dev.</a>
-      <a href="#mentoring" data-target="mentoring">Student Mentoring</a>
-      <a href="#academic" data-target="academic">Academic & IQAC</a>
-      <a href="#attendance" data-target="attendance">Attendance</a>
-      <a href="#hospitality" data-target="hospitality">Hospitality</a>
-      <a href="#records" data-target="records">Department Records</a>
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="home"> Home </a>
+      <a href="#clubs">Clubs</a>
+      <a href="#technical">Committees</a>
     </div>
   </nav>
 
-  <header id="top">
-    <h1>Departmental Committees (2025–26)</h1>
+  <header>
+    <h1>Departmental Clubs & Committees (2025–26)</h1>
     <p>Applied Sciences Department</p>
   </header>
 
-  <main class="container" id="content">
+  <!-- CLUBS -->
+  <section class="clubs-section" id="clubs">
+    <h2 class="section-title">🌟 Department Clubs</h2>
 
-    <!-- TECHNICAL -->
+    <div class="club">
+      <h3>⚙️ Technical Club</h3>
+      <div class="members-grid">
+        <div class="member-card">
+          <img src="{% static 'images/bee1.png' %}" alt="Dr. Indu Batra">
+          <h4>Dr. Indu Batra</h4>
+          <p>Club Head</p>
+        </div>
+        <div class="member-card">
+          <img src="{% static 'images/physics1.jpg' %}" alt="Dr. Ayushi">
+          <h4>Dr. Ayushi</h4>
+          <p>Coordinator</p>
+        </div>
+        <div class="member-card">
+          <img src="images/member3.jpg" alt="Student 1">
+          <h4>Student 1</h4>
+          <p>Core Member</p>
+        </div>
+        <div class="member-card">
+          <img src="images/member4.jpg" alt="Student 2">
+          <h4>Student 2</h4>
+          <p>Core Member</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="club">
+      <h3>🎭 Non-Technical Club</h3>
+      <div class="members-grid">
+        <div class="member-card">
+          <img src="{% static 'images/english6.jpg' %}" alt="Ms. Sapna">
+          <h4>Ms. Sapna</h4>
+          <p>Club Head</p>
+        </div>
+        <div class="member-card">
+          <img src="{% static 'images/english5.jpg' %}" alt="Mr. Mukul">
+          <h4>Mr. Mukul</h4>
+          <p>Coordinator</p>
+        </div>
+        <div class="member-card">
+          <img src="images/nontech3.jpg" alt="Student 3">
+          <h4>Student 3</h4>
+          <p>Event Organizer</p>
+        </div>
+        <div class="member-card">
+          <img src="images/nontech4.jpg" alt="Student 4">
+          <h4>Student 4</h4>
+          <p>Social Media Lead</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- COMMITTEES -->
+  <main class="container" id="content">
+     <h2 class="section-title">📋 Departmental Committees</h2>
+     <!-- TECHNICAL -->
     <article class="committee" id="technical">
       <div class="committee-header" tabindex="0" role="button" aria-controls="tech-body" aria-expanded="false">
         <h2>⚙️ Technical Committee</h2>
@@ -232,7 +285,8 @@
         </ul>
       </div>
     </article>
-
   </main>
+
+ <script src="{% static 'js/clubs.js' %}"></script>
 
   {% endblock content %} 
