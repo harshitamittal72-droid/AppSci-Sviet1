@@ -1,7 +1,7 @@
-{% include 'navbar.html' %}{% block content %} {%load static}
+{% include 'navbar.html' %}{% block content %} {% load static %}
 
 <head>
-<link rel="stylesheet" href="{% static 'css/aboutus.css' %}">
+  <link rel="stylesheet" href="{% static 'css/aboutus.css' %}" />
 </head>
 
 <!-- Header -->
@@ -12,7 +12,7 @@
 <!-- Director's Message -->
 <section>
   <div class="card director-message">
-    <img src="images/math1.jpg" alt="Director Photo" />
+    <img src="{% static 'images/math1.jpg' %}" alt="Director Photo" />
     <div>
       <h2>HOD's Message</h2>
       <p>
