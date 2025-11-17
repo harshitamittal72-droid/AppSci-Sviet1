@@ -16,5 +16,3 @@ def aboutus(request):
     return render(request,"aboutus.html")
 def classroom(request):
     return render(request,"classrooms.html")
-def classroom(request):
-    return render(request,"blog.html")

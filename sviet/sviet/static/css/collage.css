@@ -336,7 +336,159 @@
     min-width: 0;
 }
 
-/* ---------- Debug helpers (uncomment to debug layout) ---------- */
-/* .grid-collage { outline: 1px dashed rgba(200,0,0,0.12); } */
-/* .about-tile { outline: 1px dashed rgba(0,200,0,0.08); } */
-/* .right-grid { outline: 1px dashed rgba(0,0,200,0.06); } */
+/* ===== Force collage to size to content (override old repeat(...) row rules) ===== */
+.grid-collage {
+    /* make grid only as tall as its content */
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    /* single column wrapper (About row + cards row) */
+    grid-template-rows: auto auto !important;
+    /* row1 = About, row2 = cards */
+    grid-auto-rows: auto !important;
+    /* any implicit rows size to content */
+    height: auto !important;
+    min-height: 0 !important;
+    max-height: none !important;
+    margin-bottom: 36px !important;
+    /* optional spacing under collage */
+    padding-bottom: 0 !important;
+    box-sizing: border-box !important;
+}
+
+/* ensure nested .right-grid doesn't force extra height */
+.right-grid {
+    grid-auto-rows: minmax(0, auto) !important;
+    min-height: 0 !important;
+}
+
+/* ensure About tile sizes naturally */
+.about-tile {
+    min-height: 0 !important;
+    height: auto !important;
+}
+
+/* images shouldn't push heights */
+.right-grid a img,
+.about-image img {
+    min-height: 0 !important;
+    height: auto !important;
+    max-height: none !important;
+    object-fit: cover !important;
+}
+
+/* remove any accidental huge gap created by pseudo elements */
+.grid-collage *::before,
+.grid-collage *::after {
+    content: none !important;
+    display: none !important;
+}
+/* === Make all right-grid tiles the same height (even cropping) === */
+
+/* Set a consistent card height on desktop */
+.right-grid {
+  /* 3 columns desktop; each row fixed height */
+  grid-template-columns: repeat(3, 1fr);
+  grid-auto-rows: 240px;   /* <- fixed height for each card row (change to taste) */
+  gap: 18px;
+}
+
+/* Card wrapper fills the grid cell exactly */
+.right-grid a {
+  display: block;
+  width: 100%;
+  height: 100%;            /* ensure card occupies entire grid track */
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0 10px 28px rgba(0,0,0,0.12);
+}
+
+/* Image fills card and is cropped (never stretches the card) */
+.right-grid a img {
+  width: 100%;
+  height: 100%;            /* key: fill the card's height */
+  object-fit: cover;       /* crop, not stretch */
+  display: block;
+}
+
+/* Keep overlay pinned to bottom and not changing card height */
+.card-overlay {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 18px;
+  box-sizing: border-box;
+  background: linear-gradient(0deg, rgba(0,0,0,0.6), rgba(0,0,0,0.15));
+}
+
+/* Responsive: reduce card height on smaller screens */
+@media (max-width: 900px) {
+  .right-grid { grid-template-columns: repeat(2, 1fr); grid-auto-rows: 200px; }
+}
+@media (max-width: 540px) {
+  .right-grid { grid-template-columns: 1fr; grid-auto-rows: 160px; }
+}
+/* ===== force equal tile heights + correct cropping (strong override) ===== */
+
+/* 1) fixed row height for the right-grid (desktop) */
+.grid-collage .right-grid {
+    grid-auto-rows: 240px !important;
+    /* change 240px to the exact height you want */
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 18px !important;
+    align-items: stretch !important;
+    min-height: 0 !important;
+}
+
+/* 2) ensure each anchor fills the grid cell exactly */
+.grid-collage .right-grid>a,
+.grid-collage .right-grid>.tile {
+    display: block !important;
+    width: 100% !important;
+    height: 100% !important;
+    min-height: 0 !important;
+    box-sizing: border-box !important;
+    overflow: hidden !important;
+    border-radius: 10px !important;
+}
+
+/* 3) force images to fill & crop the card (never change card height) */
+.grid-collage .right-grid>a img,
+.grid-collage .right-grid>.tile img {
+    width: 100% !important;
+    height: 100% !important;
+    min-width: 0 !important;
+    min-height: 0 !important;
+    object-fit: cover !important;
+    display: block !important;
+}
+
+/* 4) overlay pinned to bottom, won't change card height */
+.grid-collage .right-grid>a .card-overlay,
+.grid-collage .right-grid>.tile .card-overlay {
+    position: absolute !important;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 16px !important;
+}
+
+/* 5) responsive adjustments to keep proportions */
+@media (max-width: 900px) {
+    .grid-collage .right-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+        grid-auto-rows: 200px !important;
+    }
+}
+
+@media (max-width: 540px) {
+    .grid-collage .right-grid {
+        grid-template-columns: 1fr !important;
+        grid-auto-rows: 160px !important;
+    }
+}
+
+/* Debugging helper: outline cells if you need to inspect */
+.grid-collage.debug .right-grid>a {
+    outline: 1px dashed rgba(200, 0, 0, 0.12);
+}
