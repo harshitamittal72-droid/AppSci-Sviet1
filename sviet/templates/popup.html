@@ -1,7 +1,7 @@
-{% load static %} {% block content %} {% load static %}
+{% load static %} {% block content %}
 
 <head>
-<link rel="stylesheet" href="{% static 'css/styles.css' %}">
+<link rel="stylesheet" href="{% static 'css/popup.css' %}">
 </head>
 
 <!-- Popup Structure -->
@@ -12,11 +12,12 @@
     <div class="popup-content">
       <h1 class="popup-heading">Tech Arena 2025</h1>
 
-      <img
-        src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=800"
-        alt="Tech Arena Event"
-        class="popup-image"
-      />
+    <img 
+    src="{% static 'images/Aboutus.jpg' %}" 
+    alt="Tech Arena Event" 
+    class="popup-image"
+/>
+
 
       <div class="popup-description">
         <p>
@@ -56,6 +57,6 @@
   </div>
 </div>
 
-<script src="{% static 'js/script.js' %}"></script>
+<script src="{% static 'js/popup.js' %}"></script>
 
 {% endblock content %}
