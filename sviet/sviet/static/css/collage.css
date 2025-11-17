@@ -1,0 +1,342 @@
+/* -------------------------------
+  collage.css — Full merged & safe
+  Includes: About split (left text / right image) + 3x2 card grid
+  Keeps sensible fallbacks, hover, focus, responsive tuning.
+  ------------------------------- */
+
+/* === config: tweak these to change overall sizing === */
+:root {
+    --collage-max-width: 1650px;
+    /* increase to extend About further; set 'none' to remove cap */
+    --about-height-desktop: 420px;
+    /* desktop about height */
+    --card-height-desktop: 220px;
+    /* card height */
+    --gap: 18px;
+    /* grid gap */
+}
+
+/* ---------- base layout ---------- */
+.grid-collage {
+    width: 100%;
+    max-width: var(--collage-max-width);
+    margin: 60px auto 120px;
+    padding: 0 20px;
+    box-sizing: border-box;
+
+    /* two rows: row 1 = About, row 2 = right-grid */
+    display: grid;
+    grid-template-rows: auto auto;
+    row-gap: 24px;
+    position: relative;
+}
+
+/* ---------- ABOUT TILE (full width) ---------- */
+.about-tile {
+    grid-row: 1 / 2;
+    grid-column: 1 / -1;
+    width: 100%;
+    min-height: var(--about-height-desktop);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 14px 40px rgba(0, 0, 0, 0.18);
+    background: #111214;
+    color: #f5f5f5;
+    display: block;
+}
+
+/* inner split: left text, right image */
+.about-inner {
+    display: grid;
+    grid-template-columns: 40% 60%;
+    /* change to 35%/65% for more image width */
+    height: 100%;
+    width: 100%;
+}
+
+/* left text column */
+.about-text {
+    padding: 56px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: linear-gradient(90deg, rgba(17, 17, 18, 0.96) 0%, rgba(17, 17, 18, 0.88) 100%);
+}
+
+.about-text h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 42px;
+    margin: 0 0 16px;
+    color: rgba(28, 48, 80, 0.92);
+}
+
+.about-text p {
+    margin: 0;
+    font-size: 16.5px;
+    line-height: 1.7;
+    color: #e7e7e7;
+    max-width: 720px;
+}
+
+/* right image column */
+.about-image {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    display: block;
+}
+
+.about-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transform-origin: center;
+    transition: transform .45s ease;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+
+.about-tile:hover .about-image img {
+    transform: scale(1.03);
+}
+
+/* optional overlay to darken edge */
+.about-image::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+
+    /* Smooth blue-almost-black fade */
+    background: linear-gradient(90deg,
+            rgba(10, 20, 35, 0.95) 0%,
+            /* deep blue-black */
+            rgba(10, 20, 35, 0.60) 20%,
+            /* softer fade */
+            rgba(10, 20, 35, 0.30) 40%,
+            /* subtle fade */
+            rgba(10, 20, 35, 0.10) 60%,
+            rgba(10, 20, 35, 0.00) 80%
+            /* fully image */
+        );
+}
+
+/* ---------- 6-card GRID ---------- */
+.right-grid {
+    grid-row: 2 / 3;
+    grid-column: 1 / -1;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: var(--card-height-desktop);
+    gap: var(--gap);
+    align-items: stretch;
+}
+
+/* tile basics */
+.right-grid a {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    width: 100%;
+    height: 100%;
+    display: block;
+    background: #111;
+    box-shadow: 0 10px 28px rgba(0, 0, 0, 0.12);
+    transition: transform .28s ease, box-shadow .28s ease;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.right-grid a img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform .36s ease;
+}
+
+/* overlay + text */
+.card-overlay {
+    position: absolute;
+    inset: 0;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.62), rgba(0, 0, 0, 0.16) 60%);
+    color: #fff;
+}
+
+.card-title {
+    font-size: 20px;
+    font-weight: 700;
+    margin: 0 0 6px;
+}
+
+.card-desc {
+    font-size: 13px;
+    margin: 0;
+    opacity: 0.95;
+}
+
+/* hover/focus */
+.right-grid a:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 22px 48px rgba(0, 0, 0, 0.25);
+}
+
+.right-grid a:hover img {
+    transform: scale(1.08);
+}
+
+.right-grid a:focus {
+    outline: 3px solid rgba(100, 150, 200, 0.18);
+    outline-offset: 2px;
+}
+
+/* maroon text-style */
+.text-style .card-overlay {
+    background: linear-gradient(0deg, #8FC1E3, #8FC1E3 100%);
+}
+
+/* ---------- small helpers & fallbacks (from your original) ---------- */
+/* ensure images don't show weird gaps in Safari */
+.right-grid img,
+.about-image img {
+    display: block;
+}
+
+/* small border-radius fallback */
+:root {
+    --safe-radius: 8px;
+}
+
+.right-grid a {
+    border-radius: var(--safe-radius);
+}
+
+.about-tile {
+    border-radius: calc(var(--safe-radius) + 2px);
+}
+
+/* ---------- Responsive behavior ---------- */
+/* wide but short screens: stack About columns (text then image) */
+@media (orientation: landscape) and (max-height: 820px),
+(max-width: 1100px) {
+    .about-inner {
+        grid-template-columns: 1fr;
+    }
+
+    /* stack */
+    .about-text {
+        padding: 36px;
+        min-height: 260px;
+    }
+
+    .about-image {
+        min-height: 220px;
+    }
+
+    .right-grid {
+        grid-template-columns: repeat(3, 1fr);
+        grid-auto-rows: 200px;
+    }
+
+    .about-tile {
+        min-height: auto;
+    }
+}
+
+/* medium screens */
+@media (max-width: 900px) {
+    .about-inner {
+        grid-template-columns: 1fr;
+    }
+
+    /* stack */
+    .about-text {
+        padding: 36px;
+    }
+
+    .right-grid {
+        grid-template-columns: repeat(2, 1fr);
+        grid-auto-rows: 180px;
+        gap: 16px;
+    }
+
+    .about-tile {
+        min-height: 360px;
+    }
+}
+
+/* small screens */
+@media (max-width: 540px) {
+    .grid-collage {
+        padding: 0 14px;
+        margin: 40px auto 60px;
+    }
+
+    .about-text {
+        padding: 20px;
+    }
+
+    .about-text h2 {
+        font-size: 28px;
+    }
+
+    .about-text p {
+        font-size: 14px;
+    }
+
+    .right-grid {
+        grid-template-columns: 1fr;
+        grid-auto-rows: 160px;
+        gap: 12px;
+    }
+
+    .about-image {
+        min-height: 160px;
+    }
+}
+
+/* ensure next sections clear properly */
+.grid-collage+* {
+    clear: both;
+}
+
+/* Make columns shrinkable so they won't wrap into a new line at 100% zoom */
+.about-inner {
+    display: grid;
+    /* allow columns to shrink: use minmax(0, <ratio>) instead of plain percentages */
+    grid-template-columns: minmax(0, 40%) minmax(0, 60%);
+    height: 100%;
+    gap: 0;
+}
+
+/* Allow these children to shrink below their content width */
+.about-text,
+.about-image {
+    min-width: 0;
+    /* <--- critical to prevent overflowing and wrapping */
+    box-sizing: border-box;
+}
+
+/* reduce extreme padding that can cause overflow on some viewports */
+.about-text {
+    padding: 44px;
+    /* you can reduce to 36px if still tight */
+}
+
+/* ensure image never forces column wider */
+.about-image img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    min-width: 0;
+}
+
+/* ---------- Debug helpers (uncomment to debug layout) ---------- */
+/* .grid-collage { outline: 1px dashed rgba(200,0,0,0.12); } */
+/* .about-tile { outline: 1px dashed rgba(0,200,0,0.08); } */
+/* .right-grid { outline: 1px dashed rgba(0,0,200,0.06); } */

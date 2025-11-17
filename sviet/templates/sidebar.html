@@ -1,0 +1,94 @@
+<!-- sidebar.html -->
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/sidebar.css' %}" />
+<button id="sidebarToggle" class="sidebar-hamburger" aria-label="Open sidebar">
+  <span class="sr-only">Toggle sidebar</span>
+  <!-- simple hamburger icon -->
+  <svg
+    width="28"
+    height="28"
+    viewBox="0 0 24 24"
+    fill="none"
+    aria-hidden="true"
+  >
+    <path
+      d="M3 6h18M3 12h18M3 18h18"
+      stroke="currentColor"
+      stroke-width="2"
+      stroke-linecap="round"
+    />
+  </svg>
+</button>
+
+<aside id="siteSidebar" class="sidebar" aria-label="Main sidebar">
+  <div class="sidebar-header">
+    <div class="brand">
+      <h3>Site</h3>
+      <span class="tag">Menu</span>
+    </div>
+    <button id="sidebarClose" class="close-btn" aria-label="Close sidebar">
+      &times;
+    </button>
+  </div>
+
+  <nav class="sidebar-nav">
+    <ul>
+      <!-- normal item -->
+      <li class="sidebar-item">
+        <a href="https://example.com" target="_blank" rel="noopener noreferrer">
+          <span class="item-icon">🏠</span>
+          <span class="item-text">Home</span>
+        </a>
+      </li>
+
+      <!-- dropdown item -->
+      <li class="sidebar-item has-children">
+        <button class="dropdown-toggle" aria-expanded="false">
+          <span class="item-icon">📂</span>
+          <span class="item-text">Resources</span>
+          <span class="caret" aria-hidden="true">▸</span>
+        </button>
+
+        <ul class="submenu">
+          <li>
+            <a
+              href="https://example.com/page1"
+              target="_blank"
+              rel="noopener noreferrer"
+              >Page 1</a
+            >
+          </li>
+          <li>
+            <a
+              href="https://example.com/page2"
+              target="_blank"
+              rel="noopener noreferrer"
+              >Page 2</a
+            >
+          </li>
+          <li>
+            <a
+              href="https://example.com/page3"
+              target="_blank"
+              rel="noopener noreferrer"
+              >Page 3</a
+            >
+          </li>
+        </ul>
+      </li>
+
+      <!-- more items as needed -->
+      <li class="sidebar-item">
+        <a href="/internal-route">
+          <span class="item-icon">📣</span>
+          <span class="item-text">Announcements</span>
+        </a>
+      </li>
+    </ul>
+  </nav>
+
+  <div class="sidebar-footer">
+    <small>© <span id="year"></span> YourSite</small>
+  </div>
+</aside>
+<script src="{% static 'js/sidebar.js' %}"></script>
