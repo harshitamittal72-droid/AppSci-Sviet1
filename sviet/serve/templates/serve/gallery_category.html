@@ -1,6 +1,82 @@
-{% extends "aboutus_navbar.html" %} {% block content %}
+{% include "aboutus_navbar.html" %} {% block content %}
+<head>
+  <style>
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 12px;
+    }
+    .gallery-item img {
+      width: auto;
+      max-width: 100%;
+      height: auto;
+      max-height: 600px;
+      min-width: 350px;
+      min-height: 250px;
+      object-fit: contain;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      border-radius: 18px; /* More rounded corners */
+      background: #f5f5f5;
+      box-shadow: 0 6px 24px rgba(30, 40, 90, 0.13),
+        0 1.5px 6px rgba(0, 0, 0, 0.08);
+      border: 2.5px solid #e5e7eb; /* Light border for tile effect */
+      transition: transform 0.18s, box-shadow 0.18s, border-color 0.18s;
+    }
+    .gallery-item img:hover {
+      transform: translateY(-6px) scale(1.03);
+      box-shadow: 0 12px 32px rgba(30, 40, 90, 0.18),
+        0 3px 12px rgba(0, 0, 0, 0.12);
+      border-color: #b6d0e2; /* Accent border on hover */
+    }
+    .gallery-item figcaption {
+      margin-top: 12px;
+      font-size: 1.13rem;
+      font-weight: 600;
+      color: #1b263b; /* Deep navy or your accent color */
+      text-align: center;
+      letter-spacing: 0.02em;
+      text-shadow: 0 2px 8px rgba(180, 200, 230, 0.08);
+      background: #f8fafc;
+      border-radius: 8px;
+      padding: 8px 0 6px 0;
+      box-shadow: 0 1.5px 6px rgba(0, 0, 0, 0.04);
+      max-width: 90%;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .back-link {
+      display: inline-block;
+      margin-bottom: 18px;
+      padding: 8px 22px;
+      background: linear-gradient(90deg, #b6d0e2 0%, #8fc1e3 100%);
+      color: #1b263b;
+      font-weight: 600;
+      font-size: 1.07rem;
+      border-radius: 24px;
+      text-decoration: none;
+      box-shadow: 0 2px 10px rgba(140, 180, 220, 0.1);
+      transition: background 0.18s, color 0.18s, box-shadow 0.18s;
+      letter-spacing: 0.01em;
+      border: 1.5px solid #b6d0e2;
+    }
+    .back-link:hover,
+    .back-link:focus {
+      background: linear-gradient(90deg, #8fc1e3 0%, #b6d0e2 100%);
+      color: #0b2440;
+      box-shadow: 0 4px 18px rgba(140, 180, 220, 0.18);
+      text-decoration: none;
+      outline: none;
+    }
+  </style>
+</head>
 <h1>{{ title }}</h1>
-<p><a href="{% url 'gallery_index' %}">&larr; Back to categories</a></p>
+<p>
+  <a href="{% url 'gallery_index' %}" class="back-link"
+    >&larr; Back to categories</a
+  >
+</p>
 
 <div class="gallery-grid">
   {% for img in images %}
@@ -14,22 +90,4 @@
   <p>No images in this category yet.</p>
   {% endfor %}
 </div>
-
-<style>
-  .gallery-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    gap: 12px;
-  }
-  .gallery-item img {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-    border-radius: 8px;
-  }
-  .gallery-item figcaption {
-    margin-top: 6px;
-    font-size: 0.9rem;
-  }
-</style>
-{% endblock %}
+{% endblock %} {% include 'footer1.html' %} {% include 'footer2.html' %}
