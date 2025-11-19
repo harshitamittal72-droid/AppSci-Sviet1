@@ -1,18 +1,52 @@
 {% block content %} {% load static %}
 
-<!-- <link rel="stylesheet" href="{% static 'css/styles.css' %}" /> -->
-<link rel="stylesheet" href="{% static 'css/footer.css' %}" />
-
 <!-- FOOTER 2 -->
 <footer
   class="footer2"
   id="contact"
-  style="
-    background: var(--color-bg);
-    color: var(--color-metallic);
-    padding: 36px 20px;
-  "
 >
+  <style>
+    :root {
+      --color-bg: #1B263B;
+      --color-surface: #FFFFFF;
+      --color-metallic: #D4AF7A;
+      --color-metallic-light: #EAD7B7;
+      --color-accent: #8FC1E3;
+      --color-accent-light: #B6D0E2;
+      --color-text: #1B263B;
+      --color-text-muted: #7D7D7D;
+      --color-heading: #C9A959;
+    }
+
+    .footer2 {
+      background: var(--color-bg);
+      color: var(--color-metallic);
+      padding: 36px 20px;
+    }
+
+    .footer2 h3 {
+      color: var(--color-metallic-light);
+      font-size: 1.2rem;
+      margin-bottom: 12px;
+    }
+
+    .footer2 p {
+      margin: 6px 0;
+      color: var(--color-surface);
+      font-size: 0.95rem;
+    }
+
+    .footer2 a {
+      color: var(--color-metallic);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .footer2 a:hover {
+      color: var(--color-accent-light);
+    }
+  </style>
+
   <div
     style="
       max-width: 1100px;
@@ -28,7 +62,6 @@
         Email:
         <a
           href="mailto:info@appliedsci.edu"
-          style="color: var(--color-metallic)"
           >info@appliedsci.edu</a
         >
       </p>
@@ -41,27 +74,27 @@
 
     <div>
       <h3>Quick Links</h3>
-      <p><a href="#home" style="color: var(--color-metallic)">Home</a></p>
+      <p><a href="#home">Home</a></p>
       <p>
-        <a href="#Academics" style="color: var(--color-metallic)">Academics</a>
+        <a href="#Academics">Academics</a>
       </p>
       <p>
-        <a href="#achievements" style="color: var(--color-metallic)"
+        <a href="#achievements"
           >Achievements</a
         >
       </p>
       <p>
-        <a href="#countdown-section" style="color: var(--color-metallic)"
+        <a href="#countdown-section"
           >Events</a
         >
       </p>
       <p>
-        <a href="{% url 'gallery_index' %}" style="color: var(--color-metallic)"
+        <a href="{% url 'gallery_index' %}"
           >Gallery</a
         >
       </p>
       <p>
-        <a href="{% url 'faculty' %}" style="color: var(--color-metallic)"
+        <a href="{% url 'faculty' %}"
           >Faculty</a
         >
       </p>
@@ -69,9 +102,9 @@
 
     <div>
       <h3>Resources</h3>
-      <p><a href="#" style="color: var(--color-metallic)">Library</a></p>
-      <p><a href="#" style="color: var(--color-metallic)">Research Labs</a></p>
-      <p><a href="#" style="color: var(--color-metallic)">Alumni Network</a></p>
+      <p><a href="#">Library</a></p>
+      <p><a href="#">Research Labs</a></p>
+      <p><a href="#">Alumni Network</a></p>
     </div>
   </div>
 </footer>
