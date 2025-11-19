@@ -1,18 +1,56 @@
-{% block content %}{% load static %} 
+{% block content %}{% load static %}
 
 <head>
-<link rel="stylesheet" href="{% static 'css/styles.css' %}">
+  <link rel="stylesheet" href="{% static 'css/styles.css' %}" />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    integrity="sha512-xh6O/CkQoPOWDdJtT8OiaLZNy2iVAgxe1v3zTsg25P0XSqFJtC10Jh7uXvf+l3z3N0C1Z6E1aG7YlQkPp2Vx6A=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  />
 </head>
 
- <!-- ===== SOCIAL MEDIA SECTION ===== -->
-  <section class="social-media" aria-label="Social media">
-    <h2>Social Media</h2>
-    <p>Connect with us on our social medias for latest news and updates. More coming soon...</p>
-    <div class="social-circles" role="navigation" aria-label="Social links">
-      <a href="https://www.youtube.com" target="_blank" rel="noopener noreferrer" class="circle youtube" aria-label="YouTube"><i class="fab fa-youtube" aria-hidden="true"></i></a>
-      <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer" class="circle instagram" aria-label="Instagram"><i class="fab fa-instagram" aria-hidden="true"></i></a>
-      <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" class="circle twitter" aria-label="Twitter"><i class="fab fa-twitter" aria-hidden="true"></i></a>
-      <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer" class="circle linkedin" aria-label="LinkedIn"><i class="fab fa-linkedin-in" aria-hidden="true"></i></a>
-    </div>
-  </section>
+<!-- ===== SOCIAL MEDIA SECTION ===== -->
+<section class="social-media" aria-label="Social media">
+  <h2>Social Media</h2>
+  <p>
+    Connect with us on our social medias for latest news and updates. More
+    coming soon...
+  </p>
+  <div class="social-circles" role="navigation" aria-label="Social links">
+    <a
+      href="https://www.youtube.com"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="circle youtube"
+      aria-label="YouTube"
+      ><i class="fab fa-youtube" aria-hidden="true"></i
+    ></a>
+    <a
+      href="https://www.instagram.com"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="circle instagram"
+      aria-label="Instagram"
+      ><i class="fab fa-instagram" aria-hidden="true"></i
+    ></a>
+    <a
+      href="https://twitter.com"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="circle twitter"
+      aria-label="Twitter"
+      ><i class="fab fa-twitter" aria-hidden="true"></i
+    ></a>
+    <a
+      href="https://www.linkedin.com"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="circle linkedin"
+      aria-label="LinkedIn"
+      ><i class="fab fa-linkedin-in" aria-hidden="true"></i
+    ></a>
+  </div>
+</section>
 {% endblock content %}

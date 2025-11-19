@@ -1,30 +1,77 @@
-  {% block content %} {% load static %}
+{% block content %} {% load static %}
+<head>
+  <link rel="stylesheet" href="{% static 'css/styles.css' %}" />
+  <link rel="stylesheet" href="{% static 'css/footer.css' %}" />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    integrity="sha512-xh6O/CkQoPOWDdJtT8OiaLZNy2iVAgxe1v3zTsg25P0XSqFJtC10Jh7uXvf+l3z3N0C1Z6E1aG7YlQkPp2Vx6A=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  />
+</head>
+<!-- FOOTER -->
+<i class="fab fa-facebook-f"></i>
+<i class="fab fa-twitter"></i>
+<i class="fab fa-instagram"></i>
+<i class="fab fa-linkedin-in"></i>
+<i class="fab fa-youtube"></i>
 
-  <link rel="stylesheet" href="{% static 'css/styles.css' %}">
-  
-  <!-- FOOTER -->
-  <footer class="site-footer">
-    <div class="footer-top">
-      <div class="footer-logo">Applied Science Department</div>
-      <div class="footer-contact">
-        <a href="#branch">explore courses</a>
-        <a href="#">CONTACT</a>
-        <span>+91 98765 43210</span>
-      </div>
-      <div class="footer-links">
-        <a href="#">DIRECTORY</a>
-        <a href="#">OFFICES & RESOURCES</a>
-      </div>
-      <div class="footer-social">
-        <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-        <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-        <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-        <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-        <a href="https://www.youtube.com" target="_blank" rel="noopener noreferrer" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
-      </div>
-<img src= "{% static 'images/classroom3.jpg' %}"
+<footer class="site-footer">
+  <div class="footer-top">
+    <div class="footer-logo">Applied Science Department</div>
+    <div class="footer-contact">
+      <a href="#branch">explore courses</a>
+      <a href="#">CONTACT</a>
+      <span>+91 98765 43210</span>
     </div>
-    <div class="footer-bottom">&copy; <span id="year"></span> Swami Vivekanand Institute of Engineering & Technology</div>
-  </footer>
+    <div class="footer-links">
+      <a href="#">DIRECTORY</a>
+      <a href="#">OFFICES & RESOURCES</a>
+    </div>
+    <div class="footer-social">
+      <a
+        href="https://www.facebook.com"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Facebook"
+        ><i class="fab fa-facebook-f"></i
+      ></a>
+      <a
+        href="https://twitter.com"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Twitter"
+        ><i class="fab fa-twitter"></i
+      ></a>
+      <a
+        href="https://www.instagram.com"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Instagram"
+        ><i class="fab fa-instagram"></i
+      ></a>
+      <a
+        href="https://www.linkedin.com"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="LinkedIn"
+        ><i class="fab fa-linkedin-in"></i
+      ></a>
+      <a
+        href="https://www.youtube.com"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="YouTube"
+        ><i class="fab fa-youtube"></i
+      ></a>
+    </div>
+    <img src="{% static 'images/classroom3.jpg' %}" />
+  </div>
+  <div class="footer-bottom">
+    &copy; <span id="year"></span> Swami Vivekanand Institute of Engineering &
+    Technology
+  </div>
+</footer>
 
-  {% endblock content %} 
+{% endblock content %}
