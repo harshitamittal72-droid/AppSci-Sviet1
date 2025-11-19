@@ -1,0 +1,21 @@
+{% include "aboutus_navbar.html" %} {% block content %}
+<h1>Gallery categories</h1>
+
+<ul class="category-list">
+  {% for cat in categories %}
+  <li>
+    <a href="{% url 'gallery_category' category_slug=cat.slug %}">
+      {{ cat.name }} ({{ cat.images.count }})
+    </a>
+  </li>
+  {% empty %}
+  <li>No categories yet.</li>
+  {% endfor %}
+
+  <li>
+    <a href="{% url 'gallery_uncategorized' %}"
+      >Uncategorized ({{ uncategorized_count }})</a
+    >
+  </li>
+</ul>
+{% endblock %}

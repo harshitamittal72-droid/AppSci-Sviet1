@@ -19,12 +19,12 @@
         <li><a href="{% url 'branch'%}">Branches</a></li>
         <li><a href="{% url 'faculty'%}">Faculty</a></li>
         <li><a href="{% url 'committee'%}">Committees</a></li>
-         <li><a href="{% url 'workshop'%}">Workshop</a></li>
+        <li><a href="{% url 'workshop'%}">Workshop</a></li>
       </ul>
     </li>
 
     <li><a href="#achievements">Achievements</a></li>
-    <li><a href="#gallery">Gallery</a></li>
+    <li><a href="{% url 'gallery_index' %}">Gallery</a></li>
     <!-- <li><a href="Infrastructure.html">Infra</a></li> -->
     <li><a href="{% url 'aboutus' %}">About Us</a></li>
   </ul>
