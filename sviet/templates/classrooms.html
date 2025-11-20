@@ -1,2 +1,84 @@
-{% include 'aboutus_navbar.html' %} {% block content %} {% endblock content %}
-{% include 'footer2.html' %}
+{% load static %}
+<head>
+  <link rel="stylesheet" href="{% static 'css/classroom.css' %}" />
+</head>
+
+<body>
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1>World-Class Infrastructure</h1>
+      <p>Built to empower innovation, learning, and growth.</p>
+    </div>
+  </section>
+
+  <!-- HIGHLIGHTS GRID -->
+  <section class="highlights">
+    <h2>Department Highlights</h2>
+
+    <div class="grid">
+      <div class="card">
+        <img
+          src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1"
+          alt=""
+        />
+        <h3>Our Classrooms</h3>
+        <p>Smart boards,One on one learning.</p>
+      </div>
+
+      <div class="card">
+        <img
+          src="https://images.unsplash.com/photo-1518770660439-4636190af475"
+          alt=""
+        />
+        <h3>Advanced Labs</h3>
+        <p>Latest equipment for practical, hands-on learning.</p>
+      </div>
+
+      <div class="card">
+        <img
+          src="https://images.unsplash.com/photo-1524995997946-a1c2e315a42f"
+          alt=""
+        />
+        <h3>Classroom Activities</h3>
+        <p>Fun activities that keep students active.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FACILITIES -->
+  <section class="facilities">
+    <h2>Facilities</h2>
+
+    <ul>
+      <li>Spacious Campus</li>
+      <li>Eco-Friendly Green Campus</li>
+    </ul>
+  </section>
+
+  <!-- GALLERY -->
+  <section class="gallery">
+    <h2>Campus Gallery</h2>
+
+    <div class="gallery-grid">
+      <img
+        src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b"
+        alt=""
+      />
+      <img
+        src="https://images.unsplash.com/photo-1503427983429-56c0baf7d2a7"
+        alt=""
+      />
+      <img
+        src="https://images.unsplash.com/photo-1519452575417-564c1401ecc0"
+        alt=""
+      />
+      <img
+        src="https://images.unsplash.com/photo-1517048676732-d65bc937f952"
+        alt=""
+      />
+    </div>
+  </section>
+
+  <script src="script.js"></script>
+</body>

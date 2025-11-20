@@ -83,6 +83,7 @@
 
 /* left text column */
 .about-text {
+   
     padding: 56px;
     display: flex;
     flex-direction: column;
@@ -91,10 +92,11 @@
 }
 
 .about-text h2 {
+
     font-family: 'Playfair Display', serif;
     font-size: 42px;
     margin: 0 0 16px;
-    color: rgba(28, 48, 80, 0.92);
+    color: rgba(255, 255, 255, 0.92);
 }
 
 .about-text p {
@@ -255,7 +257,7 @@
 }
 
 .right-grid a:focus {
-    outline: 3px solid rgba(100, 150, 200, 0.18);
+    outline: 3px solid rgba(82, 108, 135, 0.18);
     outline-offset: 2px;
 }
 
