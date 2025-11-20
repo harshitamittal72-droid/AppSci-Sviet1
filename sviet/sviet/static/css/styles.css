@@ -397,10 +397,11 @@ padding: 20px,20px;
    .achievements-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr); /* 4 equal columns */
-    grid-template-rows: repeat(2, 1fr);    /* 2 equal rows */
+    grid-auto-rows: min-content; /* don't stretch rows to fill extra space */
     gap: 16px;
     max-width: 1100px;
-    margin: 0 auto;
+    margin: 0 auto 0; /* no bottom margin */
+    padding-bottom: 0;
   }
 
   .card1 {
@@ -493,10 +494,20 @@ padding: 20px,20px;
   flex-direction: column;
   justify-content: flex-end;
   align-items: stretch;
-  min-height: 220px;
+  min-height: 120px;
   height: auto;
   /* <-- changed from fixed height */
   box-sizing: border-box;
   padding: 0;
   z-index: 1;
+}
+
+#achievements {
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+/* Tweak the achievements heading spacing (optional) */
+#achievements > h2 {
+  margin-bottom: 1.5rem;
 }

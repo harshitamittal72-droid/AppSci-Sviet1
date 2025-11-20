@@ -70,24 +70,34 @@
       outline: none;
     }
   </style>
-</head>
-<h1>{{ title }}</h1>
-<p>
-  <a href="{% url 'gallery_index' %}" class="back-link"
-    >&larr; Back to categories</a
-  >
-</p>
+  <h1>{{ title }}</h1>
+  <p><a href="{% url 'gallery_index' %}">&larr; Back to categories</a></p>
 
-<div class="gallery-grid">
-  {% for img in images %}
-  <figure class="gallery-item">
-    <img src="{{ img.image.url }}" alt="{{ img.alt_text }}" loading="lazy" />
-    {% if img.alt_text %}
-    <figcaption>{{ img.alt_text }}</figcaption>
-    {% endif %}
-  </figure>
-  {% empty %}
-  <p>No images in this category yet.</p>
-  {% endfor %}
-</div>
-{% endblock %} {% include 'footer1.html' %} {% include 'footer2.html' %}
+  <div class="gallery-grid">
+    {% for img in images %}
+    <figure class="gallery-item">
+      <img src="{{ img.image.url }}" alt="{{ img.alt_text }}" loading="lazy" />
+      {% if img.alt_text %}
+      <figcaption>{{ img.alt_text }}</figcaption>
+      {% endif %}
+    </figure>
+    {% empty %}
+    <p>No images in this category yet.</p>
+    {% endfor %}
+  </div>
+
+  <!-- VIEW MORE button (shows only when an external_link exists) -->
+  {% if external_link %}
+  <div class="view-more-wrap">
+    <a
+      class="view-more-btn"
+      href="{{ external_link }}"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      View more photos
+    </a>
+  </div>
+  {% endif %} {% endblock %} {% include 'footer1.html' %} {% include
+  'footer2.html' %}
+</head>

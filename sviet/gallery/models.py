@@ -10,6 +10,13 @@ class Category(models.Model):
     name = models.CharField(max_length=100, unique=True)
     slug = models.SlugField(max_length=120, unique=True, blank=True)
 
+    external_link = models.URLField(
+        max_length=600,
+        blank=True,
+        null=True,
+        help_text="Optional. If provided, a 'View more' button will appear on the category page and open this URL in a new tab."
+    )
+
     class Meta:
         ordering = ['name']
         verbose_name_plural = "categories"

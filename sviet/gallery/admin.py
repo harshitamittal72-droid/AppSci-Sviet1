@@ -4,7 +4,7 @@ from .models import GalleryImage, Category
 
 @admin.register(Category)
 class CategoryAdmin(admin.ModelAdmin):
-    list_display = ('name', 'slug')
+    list_display = ('name', 'slug','external_link')
     prepopulated_fields = {"slug": ("name",)}  # helpful in admin UI
     search_fields = ('name',)
 

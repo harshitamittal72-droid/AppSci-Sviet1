@@ -42,15 +42,17 @@ def gallery_index(request):
 def gallery_category(request, category_slug=None):
     if category_slug:
         category = get_object_or_404(Category, slug=category_slug)
-        images = category.images.all()  # uses related_name
+        images = category.images.all()
         title = category.name
+        external_link = category.external_link  # new
     else:
-        # show uncategorized if no slug provided
         category = None
         images = GalleryImage.objects.filter(category__isnull=True)
         title = "Uncategorized"
+        external_link = None
     return render(request, 'serve/gallery_category.html', {
         'category': category,
         'images': images,
         'title': title,
+        'external_link': external_link,
     })
