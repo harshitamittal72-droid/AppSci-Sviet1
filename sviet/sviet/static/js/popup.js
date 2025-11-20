@@ -26,6 +26,6 @@
 
             window.addEventListener('load', function() {
                 console.log("Popup function is working!");
-    setTimeout(openPopup, 5000);
+    setTimeout(openPopup, 1000);
 });
       
